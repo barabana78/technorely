@@ -1,9 +1,9 @@
 //throttle decorator
-function f(a) {
-    console.log(a);
+function f(a, b) {
+    console.log(a, b);
 }
 
-let f1000 = throttle(v, 1000);
+let f1000 = throttle(f, 1000);
 
 function throttle(func, ms) {
     let isThrottled = false;
