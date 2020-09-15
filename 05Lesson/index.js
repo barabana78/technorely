@@ -36,20 +36,19 @@ myFetch(IMAGE_API_URL, 'GET', 'blob')
     })
     .catch(err => console.log(err))
 
-
-
-
 // 2. Загрузить изображение, преобразовать его в Blob и используя FileReader преобразовать в формат DataUrl, далее используя функцию insertImage вставить DataUrl в тег img (добавить обработку ошибок)
 
 myFetch(IMAGE_API_URL, 'GET', 'blob')
     .then(response => {
         let reader = new FileReader()
-        let datafile = reader.readAsDataURL(response)
-        insertImage(datafile)
+        reader.readAsDataURL(response)
+        reader.onload = function (event) {
+            insertImage(event.target.result)
+            console.log('DataURL:', event);
+        };
+
     })
     .catch(err => console.log(err))
-
-
 
 function insertImage(src) {
     imageElement.src = src
