@@ -134,3 +134,6 @@ a :hover{
 .clouse:hover{
     opacity: 1;
 }
+.spacer {
+    min-height: 427px;
+}
