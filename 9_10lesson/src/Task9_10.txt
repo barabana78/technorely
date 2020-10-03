@@ -1,0 +1,15 @@
+ДЗ №9-10. Предыдущее по сборщикам №8 (на всякий случай).
+
+Создать приложение на основе Create React App, в котором будет 2 страницы.
+На каждой нужно вывести список юзеров Github.
+На первой странице запрос сделать напрямую и сохранить в локальный стейт, а на второй запрос и хранение через Redux.
+
+Create React App для старта проекта: https://github.com/facebook/create-react-app
+Документация React: https://ru.reactjs.org/
+Документация Redux: https://redux.js.org/
+React Router для роботы со страницами:
+https://github.com/ReactTraining/react-router/tree/master/packages/react-router-dom
+https://reactrouter.com/web/guides/quick-start
+Апишка юзеров Github: https://api.github.com/users
+
+P.S. JS или TS, классовые или функциональные компоненты на ваше усмотрение.
