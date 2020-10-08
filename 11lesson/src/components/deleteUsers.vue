@@ -8,7 +8,7 @@ export default {
   methods: {
     ...mapMutations(["deleteAllUsers"]), //передаем сюда массив со строками которые указывают на название мутации
     deleteUsers() {
-      this.deleteAllUsers({});
+      this.deleteAllUsers();
     }
   }
 };

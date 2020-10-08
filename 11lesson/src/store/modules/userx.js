@@ -7,11 +7,6 @@ export default {
 
       context.commit('updateUsers', receivedUsers) //в метод commit передаем название мутации которую хотим вызвать, 2-м параметром данные для этой мутации для arrUsers
     },
-
-    deleteUsers(context) {
-      const emptyArr = []
-      context.commit('updateUsers', emptyArr)
-    },
   },
   mutations: {
     //stat меняется через mutations
@@ -22,6 +17,9 @@ export default {
     //второй параметр это те данные кот.мы передаем
     deleteAllUsers(state) {
       state.users = []
+    },
+    deleteOneUser(state, id) {
+      state.users = state.users.filter(item => item.id !== id)
     },
   },
   state: {
