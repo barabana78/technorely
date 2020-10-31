@@ -13,7 +13,7 @@ export default ({ user, index, users }) => {
         <img src={user.avatar_url} alt="avatar" />
         {user.login}
       </span>
-      <button onClick={() => dispatch(removeUser(users, user.id))} type="button">
+      <button onClick={() => dispatch(removeUser(user.id))} type="button">
         x
       </button>
     </li>

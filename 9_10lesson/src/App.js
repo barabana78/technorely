@@ -1,9 +1,9 @@
 import React from 'react'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route, NavLink } from 'react-router-dom'
 import Footer from './Footer'
 
-import ReduxApp from './ReduxApp'
-import ReactApp from './ReactApp'
+import ReduxApp from './AppRedux'
+import ReactApp from './AppReact'
 
 import { useDispatch, useSelector } from 'react-redux'
 import { changeTheme } from './redux/actions'
@@ -19,8 +19,8 @@ function App() {
       <div className="wrapper">
         <div className="flex">
           <nav>
-            <a href="/">React</a>
-            <a href="/ReduxApp">Redux</a>
+            <NavLink to="/">React</NavLink>
+            <NavLink to="/ReduxApp">Redux</NavLink>
           </nav>
           <button onClick={() => dispatch(changeTheme(newTheme))}>Change theme</button>
         </div>

@@ -8,9 +8,12 @@ export const usersReducer = (state = initialState, action) => {
   console.log('action', action)
   switch (action.type) {
     case FETCH_USERS:
-      return { ...state, fetchedUsers: action.payload } //1возвращаем старый стейт2меняем старыйfetchedUsers на action.payload
-    case DELL_USERS:
       return { ...state, fetchedUsers: action.payload }
+    case DELL_USERS:
+      return {
+        ...state,
+        fetchedUsers: state.fetchedUsers.filter(item => item.id !== action.payload),
+      }
     default:
       return state
   }

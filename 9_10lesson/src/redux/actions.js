@@ -8,15 +8,10 @@ export function fetchUsers() {
   }
 }
 
-export function removeUser(users, id) {
-  return dispatch => {
-    const dellUser = users.filter(item => item.id !== id)
-    dispatch({ type: DELL_USERS, payload: dellUser })
-  }
+export function removeUser(id) {
+  return { type: DELL_USERS, payload: id }
 }
 
 export function changeTheme(newTheme) {
-  return dispatch => {
-    dispatch({ type: THEME, payload: newTheme })
-  }
+  return { type: THEME, payload: newTheme }
 }
