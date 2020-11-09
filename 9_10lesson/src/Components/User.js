@@ -1,27 +1,23 @@
-import React, { useContext } from 'react'
-import PropTypes from 'prop-types'
-import ContextDel from '../context'
+import React from 'react'
+import { useDispatch } from 'react-redux'
+import { removeUser } from '../redux/actions'
 
-function MyUser({ user, index }) {
-  const { removeUser } = useContext(ContextDel)
+const User = ({ user, index, users }) => {
+  const dispatch = useDispatch()
+
   return (
-    <li className="wow animate__backInUp">
+    <li className="animate__backInDown">
       <span>
         <strong>{index + 1}</strong>
         &nbsp;&nbsp;
         <img src={user.avatar_url} alt="avatar" />
         {user.login}
       </span>
-      <button type="button" onClick={() => removeUser(user.id)}>
+      <button onClick={() => dispatch(removeUser(user.id))} type="button">
         x
       </button>
     </li>
   )
 }
 
-MyUser.propTypes = {
-  user: PropTypes.object.isRequired,
-  index: PropTypes.number,
-}
-
-export default MyUser
+export default User

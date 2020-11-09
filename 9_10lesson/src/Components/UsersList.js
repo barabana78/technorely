@@ -1,20 +1,25 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import MyUser from './User'
+import { useSelector } from 'react-redux'
+import User from './User'
+import getUser from '../redux/selectors/userSelector'
 
-function UsersList(props) {
+const UsersList = () => {
+//   const users = useSelector(state => state.users.fetchedUsers)
+const users = useSelector(state => getUser(state))
   return (
-    <ul>
-      {props.users.map((user, index) => {
-        return <MyUser user={user} key={user.id} index={index} />
-      })}
-      <li></li>
-    </ul>
+    <div>
+      {users.length ? (
+        <ul>
+          {users.map((user, i, users) => (
+            <User user={user} index={i} key={user.id} users={users} />
+          ))}
+          <li></li>
+        </ul>
+      ) : (
+        <p>No users</p>
+      )}
+    </div>
   )
-}
-
-UsersList.propTypes = {
-  users: PropTypes.arrayOf(PropTypes.object).isRequired,
 }
 
 export default UsersList

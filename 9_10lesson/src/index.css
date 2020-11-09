@@ -1,8 +1,8 @@
 @import '~animate.css';
-@font-face {
+/* @font-face {
   font-family: 'Ranchers';
   src: url('Ranchers-Regular.ttf') format('truetype');
-}
+} */
 
 body * {
   box-sizing: border-box;
@@ -139,12 +139,12 @@ li button:hover {
 
 /* NAVIGATION */
 
-nav a,
-.flex button {
+.changeTheme {
   font-family: 'Ranchers', cursive, sans-serif;
   font-size: 20px;
   cursor: pointer;
   padding: 5px;
+  margin-bottom: 5px;
   margin-right: 10px;
   border: 1px solid grey;
   border-radius: 5px;
@@ -154,18 +154,19 @@ nav a,
 }
 
 nav a:hover,
-.flex button:hover {
+.flex button:hover,
+.changeTheme:hover {
   opacity: 1;
   box-shadow: rgba(red, green, blue, 0.5);
 }
-
-/* footer */
 
 ul li:last-child {
   min-height: 35px;
   background-color: transparent;
   border: transparent;
 }
+
+/* footer */
 
 footer {
   position: absolute;
@@ -179,13 +180,14 @@ footer {
   justify-content: space-between;
   align-items: center;
   background-color: royalblue;
+  padding: 5px 10px;
 }
 
-.footer p {
-  padding: 5px;
-}
-
-.footer p span {
+.footer span {
+  font-family: 'Ranchers', cursive, sans-serif;
+  font-style: italic;
+  font-weight: bold;
+  letter-spacing: 2px;
   font-size: 15px;
   color: brown;
 }
@@ -193,3 +195,4 @@ footer {
 .redux {
   background-color: lightslategrey;
 }
+
